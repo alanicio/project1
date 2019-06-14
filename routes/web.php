@@ -27,6 +27,10 @@ Route::resource('empleados','Empleado\EmpleadoController');
 
 Route::resource('proveedores','Proveedor\ProveedorController');
 
+Route::post('status/{id}','Pedido\PedidoController@statusUpdate');
+Route::post('guia/{id}','Pedido\PedidoController@guiaStore');
+Route::post('cliente','Pedido\PedidoController@clientePedido');
+Route::get('pedidos/finalizados','Pedido\PedidoController@finalizadosIndex');
 Route::resource('pedidos','Pedido\PedidoController');
 
 

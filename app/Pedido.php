@@ -13,7 +13,9 @@ class Pedido extends Model
         'proveedor_id',
         'orden',
         'guia',
-        'status'
+        'status',
+        'correo_cliente',
+        'fecha_entrega'
     ];
 
    

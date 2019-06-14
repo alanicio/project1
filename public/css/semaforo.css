@@ -1,0 +1,61 @@
+<style type="text/css">
+  .traffic-light {
+  display: block;
+  left: 50%;
+  top: 50%;
+  background-color: #e0e0e0;
+  width: 175px;
+  height: 60px;
+  border-radius: 100px;
+}
+input {
+  appearance: none;
+  user-select: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  margin-left: 18px;
+  border-radius: 100%;
+}
+input.color1 {
+  background-color: #bd0903;
+  box-shadow: 0em 0px 0px 5px #bd0903;
+}
+input.color1:hover {
+  background-color: #fc625d;
+  box-shadow: 0em 0px 0px 5px #fc625d;
+}
+input.color1:checked {
+  background-color: #fc625d;
+  box-shadow: 0em 0px 0px 5px #fc625d;
+}
+input.color2 {
+  background-color: #a26d02;
+  box-shadow: 0em 0px 0px 5px #a26d02;
+}
+input.color2:hover {
+  background-color: #fdbe40;
+  box-shadow: 0em 0px 0px 5px #fdbe40;
+}
+input.color2:checked {
+  background-color: #fdbe40;
+  box-shadow: 0em 0px 0px 5px #fdbe40;
+}
+input.color3 {
+  background-color: #15511e;
+  box-shadow: 0em 0px 0px 5px #15511e;
+}
+input.color3:hover {
+  background-color: #34cb4a;
+  box-shadow: 0em 0px 0px 5px #34cb4a;
+}
+input.color3:checked {
+  background-color: #34cb4a;
+  box-shadow: 0em 0px 0px 5px #34cb4a;
+}
+* {
+  user-select: none;
+  outline: none;
+}
+</style>

@@ -19,9 +19,11 @@ class CreatePedidosTable extends Migration
             $table->foreign('empleado_id')->references('id')->on('users');
             $table->integer('proveedor_id')->unsigned();
             $table->foreign('proveedor_id')->references('id')->on('proveedores');
+            $table->date('fecha_entrega');
             $table->string('orden')->nullable();
             $table->string('guia')->nullable();
             $table->integer('status')->default(1);
+            $table->string('correo_cliente')->nullable();
             $table->timestamps();
         });
     }

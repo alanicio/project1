@@ -16,8 +16,14 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {   $pedidos=Pedido::where('status','!=',3)->get();
+        return view('Pedidos.index',['pedidos'=>$pedidos]);   
+    }
+
+    public function finalizadosIndex()
     {
-        return view('Pedidos.index',['pedidos'=>Pedido::get()]);   
+        $pedidos=Pedido::where('status',3)->get();
+        return view('Pedidos.index',['pedidos'=>$pedidos]);  
     }
 
     /**
@@ -74,6 +80,7 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //dd($request);
         $pedido=Pedido::find($id);
         $pedido->status=$request->status;
         $pedido->update();
@@ -89,5 +96,28 @@ class PedidoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function clientePedido(Request $request)
+    {
+        //dd($request->all());
+        $pedidos=Pedido::where('correo_cliente',$request->correo_cliente)->get();
+        return view('Pedidos.cliente',['pedidos'=>$pedidos]);
+    }
+
+    public function statusUpdate(Request $request,$id)
+    {
+        $pedido=Pedido::find($id);
+        $pedido->status=$request->status;
+        $pedido->update();
+        return 'status cambiado';
+    }
+
+    public function guiaStore(Request $request,$id)
+    {
+        $pedido=Pedido::find($id);
+        $pedido->guia=$request->guia;
+        $pedido->update();
+        return 'guia actualizada';
     }
 }

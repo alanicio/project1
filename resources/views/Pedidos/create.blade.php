@@ -33,8 +33,12 @@
 	      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="orden">
 	    </div>
 	    <div class="form-group">
-	      <label for="exampleInputEmail1">Guia</label>
-	      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 	name="guia">
+	      <label for="exampleInputEmail1">Correo del cliente</label>
+	      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo_cliente">
+	    </div>
+	    <div class="form-group">
+	      <label for="exampleInputEmail1">Fecha de entrega estimada</label>
+	      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fecha_entrega">
 	    </div>
 
 	  <!-- <div class="form-group">
