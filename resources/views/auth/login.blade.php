@@ -2,7 +2,7 @@
 @section('content')
 
 @if(Auth::check())
-     <script>window.location = "/principal";</script>
+     <script>window.location = "../principal";</script>
 @endif
 <div class="container">
     <div class="row justify-content-center">                                    
