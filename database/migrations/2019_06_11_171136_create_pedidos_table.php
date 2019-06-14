@@ -14,7 +14,7 @@ class CreatePedidosTable extends Migration
     public function up()
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('empleado_id')->unsigned();
             $table->foreign('empleado_id')->references('id')->on('users');
             $table->integer('proveedor_id')->unsigned();

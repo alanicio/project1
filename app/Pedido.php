@@ -30,4 +30,8 @@ class Pedido extends Model
     public function proveedor(){
     	return $this->belongsTo('App\Proveedor','proveedor_id');
     }
+
+    public function archivos(){
+        return $this->hasMany('App\Archivo');
+    }
 }

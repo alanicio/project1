@@ -8,9 +8,10 @@
         <th scope="col">Proveedor</th>
         <th scope="col">Orden</th>
         <th scope="col">Guia</th>
-        <th scope="col">Fecha y hora</th>
-        <th scope="col">Fecha entrega</th>
+        <th scope="col">Creacion</th>
+        <th scope="col">Entrega</th>
         <th scope="col">Status</th>
+        <th scope="col">Archivos</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +23,7 @@
 	  	      <td>{{$pedido->orden}}</td>
 	  	      <td>
               @if($pedido->status!=3)
-                <input type="text" class="form-control" id="{{$pedido->id}}" aria-describedby="emailHelp" name="guia" value="{{$pedido->guia}}" >  
+                <input type="text" class="form-control" id="{{$pedido->id}}" aria-describedby="emailHelp" name="guia" value="{{$pedido->guia}}" style="width: 150px">  
               @else
                 {{$pedido->guia}} 
               @endif
@@ -41,7 +42,9 @@
                 @else
                   <td style="background-color: green"></td>
                 @endif
-                      
+                <td>
+                  <a href="{{url('pedidos/'.$pedido->id.'/archivos')}}" class="btn btn-primary"><i class="fas fa-eye"></i><strong> Ver</strong></a>
+                </td>                      
                 </div>  
 	  	    </tr>
     	@endforeach

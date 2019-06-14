@@ -30,6 +30,10 @@ Route::resource('proveedores','Proveedor\ProveedorController');
 Route::post('status/{id}','Pedido\PedidoController@statusUpdate');
 Route::post('guia/{id}','Pedido\PedidoController@guiaStore');
 Route::post('cliente','Pedido\PedidoController@clientePedido');
+
+Route::get('pedidos/{id}/archivos','Pedido\PedidoController@archivoCreate');
+Route::post('pedidos/{id}/storeArchivos','Pedido\PedidoController@archivoStore');
+
 Route::get('pedidos/finalizados','Pedido\PedidoController@finalizadosIndex')->name('pedidos_finalizados');
 Route::resource('pedidos','Pedido\PedidoController');
 

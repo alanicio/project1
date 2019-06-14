@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Pedido;
 use App\User;
 use App\Proveedor;
+use App\Archivo;
 
 class PedidoController extends Controller
 {
@@ -119,5 +120,21 @@ class PedidoController extends Controller
         $pedido->guia=$request->guia;
         $pedido->update();
         return 'guia actualizada';
+    }
+
+    public function archivoCreate($id)
+    {
+        $archivos=Pedido::find($id)->archivos->all();
+        return view('Pedidos.archivos',['pedido'=>Pedido::find($id),'archivos'=>$archivos]);
+    }
+
+    public function archivoStore(Request $request,$id)
+    {
+        $request->file->storeAs('pedidos_files',$request->file->getClientOriginalName());
+        $archivo=new Archivo($request->all());
+        $archivo->nombre=$request->file->getClientOriginalName();
+        $archivo->pedido_id=$id;
+        $archivo->save();
+        return $this->archivoCreate($id);
     }
 }
