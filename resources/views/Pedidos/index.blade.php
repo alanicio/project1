@@ -73,10 +73,10 @@
             },
           })
           .then((value) => {
-            if(value!='Si')
+            if(value!='Si')//selecciono no o cancelar
             {
-              location.reload(true);
-
+              save=0;
+              window.location.href = "{{route('pedidos.index')}}";
             }
             else{
               $.ajax({
@@ -86,7 +86,7 @@
                       "status":status,
                         },
                 success: function(res){
-                  location.reload(true);;
+                  window.location.href = "{{route('pedidos_finalizados')}}";
                 },
               });
             }
