@@ -17,7 +17,7 @@
   </div>
   <ul class="list-group list-group-flush">
     @foreach ($archivos as $archivo)
-        <li class="list-group-item"><a href="storage/pedidos_files/{{$archivo->nombre}}" target="_blank" class="card-link">{{$archivo->nombre}}</a></li>
+        <li class="list-group-item"><a href="/storage/pedidos_files/{{$archivo->nombre}}" target="_blank" class="card-link">{{$archivo->nombre}}</a></li>
     @endforeach
   </ul>
 </div>
