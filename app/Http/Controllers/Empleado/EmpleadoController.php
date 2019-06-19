@@ -5,9 +5,22 @@ namespace App\Http\Controllers\Empleado;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class EmpleadoController extends Controller
 {
+    public function __construct() {
+        $this->middleware(function ($request, $next) {
+            if(Auth::check()) {
+                
+                return $next($request);
+                              
+             return redirect('/principal');
+                 
+            }
+            return redirect('/');           
+        });
+    }
     /**
      * Display a listing of the resource.
      *

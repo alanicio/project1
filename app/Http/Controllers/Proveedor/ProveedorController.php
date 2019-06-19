@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Proveedor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Proveedor;
+use Illuminate\Support\Facades\Auth;
 
 class ProveedorController extends Controller
 {
@@ -13,6 +14,19 @@ class ProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware(function ($request, $next) {
+            if(Auth::check()) {
+                
+                return $next($request);
+                              
+             return redirect('/principal');
+                 
+            }
+            return redirect('/');           
+        });
+    }
+
     public function index()
     {
         return view('Proveedores.index',['proveedores'=>Proveedor::get()]);

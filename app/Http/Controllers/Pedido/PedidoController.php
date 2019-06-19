@@ -8,9 +8,23 @@ use App\Pedido;
 use App\User;
 use App\Proveedor;
 use App\Archivo;
+use Illuminate\Support\Facades\Auth;
 
 class PedidoController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware(function ($request, $next) {
+            if(Auth::check()) {
+                
+                return $next($request);
+                              
+             return redirect('/principal');
+                 
+            }
+            return redirect('/');           
+        });
+    }
     /**
      * Display a listing of the resource.
      *
