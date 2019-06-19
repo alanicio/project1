@@ -74,11 +74,11 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
-        <a type="button" id="login_cliente" class="btn btn-info"><i class="fas fa-eye">Monitorizar mi pedido</a>  
+        <a type="button" href="{{url('/cliente')}}" id="login_cliente" class="btn btn-info"><i class="fas fa-eye">Monitorizar mi pedido</a>  
     </div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var a=1;
    $('#login_cliente').click(function(){
         
@@ -98,5 +98,5 @@
         }
         
    })
-</script>
+</script> -->
 @endsection
