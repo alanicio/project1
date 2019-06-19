@@ -1,12 +1,12 @@
 @extends('principal')
 @section('content')
-  <table class="table table-dark">
+  <table class="table table-propia">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Direccion</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">DESCRIPCION</th>
+        <th scope="col">DIRECCION</th>
       </tr>
     </thead>
     <tbody>

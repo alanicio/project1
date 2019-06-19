@@ -4,7 +4,7 @@
         <div class="row justify-content-center">                                    
             
 
-            <form id="cliente" action="{{url('cliente')}}" method="POST">
+            <form id="cliente" action="{{url('clienteData')}}" method="POST">
                 @csrf
               <div class="form-group">
                 <label for="exampleInputEmail1">Direccion de correo</label>

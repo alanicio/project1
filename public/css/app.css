@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+.center {
+  margin: auto;
+  width: 65%;
+  padding: 10px;
+}
 
+.table-propia{
+	color: #6AACC9;
+	border-color: #255D86;
+}
 
 
 /*!

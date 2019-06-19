@@ -1,17 +1,17 @@
 @extends('principal')
 @section('content')
-  <table class="table table-dark">
+  <table class="table table-propia">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Empleado asignado</th>
-        <th scope="col">Proveedor</th>
-        <th scope="col">Orden</th>
-        <th scope="col">Guia</th>
-        <th scope="col">Creacion</th>
-        <th scope="col">Entrega</th>
-        <th scope="col">Status</th>
-        <th scope="col">Archivos</th>
+        <th scope="col">EMPLEADO ASIGNADO</th>
+        <th scope="col">PROVEEDOR</th>
+        <th scope="col">ORDEN</th>
+        <th scope="col">GUIA</th>
+        <th scope="col">CREACION</th>
+        <th scope="col">ENTREGA</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">ARCHIVOS</th>
       </tr>
     </thead>
     <tbody>

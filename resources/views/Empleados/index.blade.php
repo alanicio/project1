@@ -1,11 +1,11 @@
 @extends('principal')
 @section('content')
-<table class="table table-dark">
+<table class="table table-propia">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Correo</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">CORREO</th>
       <!-- <th scope="col">Handle</th> -->
     </tr>
   </thead>

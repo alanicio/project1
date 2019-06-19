@@ -13,18 +13,18 @@ use Illuminate\Support\Facades\Auth;
 class PedidoController extends Controller
 {
 
-    public function __construct() {
-        $this->middleware(function ($request, $next) {
-            if(Auth::check()) {
+    // public function __construct() {
+    //     $this->middleware(function ($request, $next) {
+    //         if(Auth::check()) {
                 
-                return $next($request);
+    //             return $next($request);
                               
-             return redirect('/principal');
+    //          return redirect('/principal');
                  
-            }
-            return redirect('/');           
-        });
-    }
+    //         }
+    //         return redirect('/');           
+    //     });
+    // }
     /**
      * Display a listing of the resource.
      *

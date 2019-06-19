@@ -1,12 +1,12 @@
 @extends('clientes')
 @section('content')
-  <table class="table table-dark">
+  <table class="table table-propia">
     <thead>
       <tr>
-        <th scope="col">Fecha y hora</th>
-        <th scope="col">Status</th>
-        <th scope="col">Leyenda de status</th>
-        <th scope="col">Fecha estimada de entrega</th>
+        <th scope="col">FEHCA Y HORA</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">LEYENDA Y STATUS</th>
+        <th scope="col">FECHA DE ENTREGA</th>
       </tr>
     </thead>
     <tbody>
@@ -14,13 +14,13 @@
 	  	  	<tr>
 	  	      <td>{{$pedido->created_at->format('d/m/y')}} a las {{$pedido->created_at->format('H:i')}}</td>
             @if($pedido->status==1)
-	  	        <td style="background-color: red"></td>
+	  	        <td style="background-color: red; width: 10px;"></td>
               <td>Por procesar</td>
             @elseif($pedido->status==2)
-              <td style="background-color: yellow"></td>
+              <td style="background-color: yellow;width: 10px"></td>
               <td>Procesando</td>
             @elseif($pedido->status==3)
-              <td style="background-color: green"></td>
+              <td style="background-color: green;width: 10px"></td>
               <td>Entregado</td>
             @endif
             <td>{{date('d/m/y',strtotime($pedido->fecha_entrega))}}</td>
