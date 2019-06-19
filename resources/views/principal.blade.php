@@ -27,9 +27,11 @@
 <body>
   <div class="row p-0 m-0">
       <div class="col-12 p-0 m-0">
-          <a href="{{ url('/principal') }}">
-              <img id="imagenHeaderid" src="{{asset('img/Header_medium.png')}}" class="img-fluid" alt="Sigvaris.">
-          </a>
+       
+        <a href="{{ url('/principal') }}">
+      
+            <img id="imagenHeaderid" src="{{asset('img/Header_medium.png')}}" class="img-fluid" alt="Sigvaris.">
+        </a>
       </div>
   </div>
   @if(Auth::check())
