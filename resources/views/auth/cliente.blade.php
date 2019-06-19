@@ -11,7 +11,7 @@
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="correo_cliente">
                 <small id="emailHelp" class="form-text text-muted">Monitorice el estatus de su pedido.</small>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Monitorizar</button>
             </form>
 
         </div>

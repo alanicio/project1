@@ -6,7 +6,7 @@
 			<div class="input-group-prepend">
 				<label class="input-group-text" for="inputGroupSelect01">Empleado</label>
 			</div>
-			<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="empleado_name" value="{{ Auth::user()->name }}" readonly="">
+			<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="empleado_name" value="{{ Auth::user()->name }}" readonly="" required="">
 			<input type="hidden" name="empleado_id" value="{{ Auth::user()->id }}">
 			
 			<!-- <select class="custom-select" id="inputGroupSelect01" name="empleado_id">
@@ -20,8 +20,8 @@
 			<div class="input-group-prepend">
 				<label class="input-group-text" for="inputGroupSelect01">Proveedor</label>
 			</div>
-			<select class="custom-select" id="inputGroupSelect01" name="proveedor_id">
-				<option selected>Proveedor que dara el producto</option>
+			<select class="custom-select" id="inputGroupSelect01" name="proveedor_id" required="">
+				<option selected value="">Proveedor que dara el producto</option>
 				@foreach($proveedores as $proveedor)
 					<option value="{{$proveedor->id}}">{{$proveedor->nombre}}</option>
 				@endforeach
@@ -30,15 +30,15 @@
 		
 		<div class="form-group">
 	      <label for="exampleInputEmail1">Numero de orden</label>
-	      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="orden">
+	      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="orden" required="">
 	    </div>
 	    <div class="form-group">
 	      <label for="exampleInputEmail1">Correo del cliente</label>
-	      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo_cliente">
+	      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo_cliente" required="">
 	    </div>
 	    <div class="form-group">
 	      <label for="exampleInputEmail1">Fecha de entrega estimada</label>
-	      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fecha_entrega">
+	      <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fecha_entrega" required="">
 	    </div>
 
 	  <!-- <div class="form-group">
@@ -49,6 +49,6 @@
 	    <label for="exampleInputPassword1">Direccion</label>
 	    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese la direccion del proveedor" name="direccion">
 	  </div> -->
-	  <button type="submit" class="btn btn-primary">Submit</button>
+	  <button type="submit" class="btn btn-primary">Crear pedido</button>
 	</form>
 @endsection
