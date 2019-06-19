@@ -13,7 +13,7 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Archivos subidos para este pedido</h5>
-    <p class="card-text">Clickee unarchivo para verlo.</p>
+    <p class="card-text">Clickee un archivo para verlo.</p>
   </div>
   <ul class="list-group list-group-flush">
     @foreach ($archivos as $archivo)
