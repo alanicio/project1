@@ -111,7 +111,7 @@
       </nav>
   @endif
 
-    <div class="container" style="margin-top: 70px">
+    <div class="container" style="margin-top: 70px;margin-bottom: 50px">
       @yield('content')
     </div>
 </body>

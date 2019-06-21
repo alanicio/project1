@@ -10,6 +10,17 @@
 	border-color: #255D86;
 }
 
+.table-cliente{
+	color: #255D86;
+}
+
+.table-cliente>tbody>tr>td, .table-cliente>tbody>tr>th,
+.table-cliente>tfoot>tr>td, .table-cliente>tfoot>tr>th,
+.table-cliente>thead>tr>td, .table-cliente>thead>tr>th
+{
+  border: 0
+}
+
 
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)

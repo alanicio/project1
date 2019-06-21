@@ -151,4 +151,14 @@ class PedidoController extends Controller
         $archivo->save();
         return $this->archivoCreate($id);
     }
+
+    public function dataStore(Request $request, $id)
+    {
+        $pedido=Pedido::find($id);
+        $pedido->comentarios_publicos=$request->publicos;
+        $pedido->comentarios_privados=$request->privados;
+        $pedido->guia=$request->guia;
+        $pedido->update();
+        return $this->archivoCreate($id);
+    }
 }

@@ -4,32 +4,28 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">EMPLEADO ASIGNADO</th>
         <th scope="col">PROVEEDOR</th>
         <th scope="col">ORDEN</th>
-        <th scope="col">GUIA</th>
-        <th scope="col">CREACION</th>
+<!--         <th scope="col">GUIA</th> -->
         <th scope="col">ENTREGA</th>
         <th scope="col">STATUS</th>
-        <th scope="col">ARCHIVOS</th>
+        <th scope="col">INFO</th>
       </tr>
     </thead>
     <tbody>
     	@foreach($pedidos as $pedido)
 	  	  	<tr>
 	  	      <th scope="row">{{$pedido->id}}</th>
-	  	      <td>{{$pedido->empleado->name}}</td>
 	  	      <td>{{$pedido->proveedor->nombre}}</td>
 	  	      <td>{{$pedido->orden}}</td>
-	  	      <td>
+	  	      <!-- <td>
               @if($pedido->status!=3)
-                <input type="text" class="form-control" id="{{$pedido->id}}" aria-describedby="emailHelp" name="guia" value="{{$pedido->guia}}" style="width: 150px">  
+                <input type="text" class="form-control" id="{{$pedido->id}}" aria-describedby="emailHelp" name="guia" value="{{$pedido->guia}}" style="width: 200px">  
               @else
                 {{$pedido->guia}} 
               @endif
               
-            </td>
-	  	      <td>{{$pedido->created_at->format('d/m/y')}} a las {{$pedido->created_at->format('H:i')}}</td>
+            </td> -->
             <td>{{date('d/m/y',strtotime($pedido->fecha_entrega))}}</td>
 	  	        
               <div class="traffic-light">
@@ -43,7 +39,7 @@
                   <td style="background-color: green"></td>
                 @endif
                 <td>
-                  <a href="{{url('pedidos/'.$pedido->id.'/archivos')}}" class="btn btn-primary"><i class="fas fa-eye"></i><strong> Ver</strong></a>
+                  <a href="{{url('pedidos/'.$pedido->id.'/archivos')}}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i><strong> Ver mas</strong></a>
                 </td>                      
                 </div>  
 	  	    </tr>

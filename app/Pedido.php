@@ -15,7 +15,10 @@ class Pedido extends Model
         'guia',
         'status',
         'correo_cliente',
-        'fecha_entrega'
+        'fecha_entrega',
+        'comentarios_publicos',
+        'comentarios_privados',
+        'envio_a_cargo_de'
     ];
 
    
