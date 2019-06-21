@@ -43,7 +43,7 @@
               @if($pedido->status==1)
                 <td style="background-color: red; width: 150px; text-align: center; color: white">Por procesar</td>
               @elseif($pedido->status==2)
-                <td style="background-color: yellow; width: 150px; text-align: center; color: white">Procesand</td>
+                <td style="background-color: #F7E74F; width: 150px; text-align: center; color: white">Procesando</td>
               @elseif($pedido->status==3)
                 <td style="background-color: green; width: 150px; text-align: center; color: white">Entregado</td>
               @endif

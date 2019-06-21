@@ -158,6 +158,7 @@ class PedidoController extends Controller
         $pedido->comentarios_publicos=$request->publicos;
         $pedido->comentarios_privados=$request->privados;
         $pedido->guia=$request->guia;
+        $pedido->envio_a_cargo_de=$request->envio_a_cargo_de;
         $pedido->update();
         return $this->archivoCreate($id);
     }
