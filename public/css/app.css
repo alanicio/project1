@@ -21,6 +21,13 @@
   border: 0
 }
 
+.border-azul{
+	border: solid;
+	border-color: #115B9A;
+	border-collapse: separate;
+	border-spacing:10px;
+}
+
 
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)

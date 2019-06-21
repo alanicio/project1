@@ -27,7 +27,7 @@
  -->
  <!-- <span class="border border-dark">texto</span> -->
   @foreach($pedidos as $pedido)
-    <table class="border border-dark table table-borderless table-cliente">
+    <table class="table table-borderless table-cliente border-azul">
       <thead>
         <tr>
           <th scope="col" style="width:200px; ">FECHA Y HORA</th>
@@ -41,11 +41,11 @@
             <tr>
               <td>{{$pedido->created_at->format('d/m/y')}} a las {{$pedido->created_at->format('H:i')}}</td>
               @if($pedido->status==1)
-                <td style="background-color: red; width: 150px; text-align: center; color: white">Por procesar</td>
+                <td style="background-color: red; width: 175px; text-align: center; color: white">POR PROCESAR</td>
               @elseif($pedido->status==2)
-                <td style="background-color: #F7E74F; width: 150px; text-align: center; color: white">Procesando</td>
+                <td style="background-color: #EABD2F; width: 175px; text-align: center; color: white">PROCESANDO</td>
               @elseif($pedido->status==3)
-                <td style="background-color: green; width: 150px; text-align: center; color: white">Entregado</td>
+                <td style="background-color: green; width: 175px; text-align: center; color: white">ENTREGADO</td>
               @endif
               <td>{{$pedido->comentarios_publicos}}</td>
               <td>{{date('d/m/y',strtotime($pedido->fecha_entrega))}}</td>
