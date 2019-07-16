@@ -14,7 +14,20 @@
     </thead>
     <tbody>
     	@foreach($pedidos as $pedido)
-	  	  	<tr>
+        @php
+          if(isset($selected))
+          {
+            if($selected==$pedido->id)
+            {
+              echo'<tr style="background-color:  #dcd4d4 ;">';
+            }
+            else
+              echo '<tr>';
+          }
+          else
+            echo '<tr>';
+        @endphp
+	  	  	
 	  	      <th scope="row">{{$pedido->id}}</th>
 	  	      <td>{{$pedido->proveedor->nombre}}</td>
 	  	      <td>{{$pedido->orden}}</td>

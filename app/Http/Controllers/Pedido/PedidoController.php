@@ -41,6 +41,11 @@ class PedidoController extends Controller
         return view('Pedidos.index',['pedidos'=>$pedidos]);  
     }
 
+    public function pedidoSelected($id)
+    {
+        $pedidos=$pedidos=Pedido::where('status',3)->get();
+        return view('Pedidos.index',['pedidos'=>$pedidos,'selected'=>$id]);
+    }
     /**
      * Show the form for creating a new resource.
      *
