@@ -1,7 +1,7 @@
 @extends('principal')
 @section('content')
 <div style="margin-bottom: 30px;">
-  <a href="{{$pedido->status==3?url('pedidos/selected/'.$pedido->id):route('pedidos.index')}}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i><strong> Atras</strong></a>
+  <a href="{{$pedido->status==3?url('pedidos/finalizados/selected/'.$pedido->id):url('pedidos/selected/'.$pedido->id)}}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i><strong> Atras</strong></a>
 </div>
 
 <div class="row">

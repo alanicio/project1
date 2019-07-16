@@ -35,10 +35,13 @@ Route::post('status/{id}','Pedido\PedidoController@statusUpdate');
 Route::post('guia/{id}','Pedido\PedidoController@guiaStore');
 Route::post('clienteData','Pedido\PedidoController@clientePedido');
 
+Route::get('pedidos/finalizados/selected/{id}','Pedido\PedidoController@finalizadoSelected');
 Route::get('pedidos/{id}/archivos','Pedido\PedidoController@archivoCreate');
 Route::post('pedidos/{id}/storeArchivos','Pedido\PedidoController@archivoStore');
 Route::post('pedidos/{id}/storeData','Pedido\PedidoController@dataStore');
 Route::get('pedidos/selected/{id}','Pedido\PedidoController@pedidoSelected');
+//Route::get('pedidos/finalizados/selected/{id}','Pedido\PedidoController@finalizadoSelected');
+
 
 Route::get('pedidos/finalizados','Pedido\PedidoController@finalizadosIndex')->name('pedidos_finalizados');
 Route::resource('pedidos','Pedido\PedidoController');

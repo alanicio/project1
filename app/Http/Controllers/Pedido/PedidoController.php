@@ -43,6 +43,12 @@ class PedidoController extends Controller
 
     public function pedidoSelected($id)
     {
+        $pedidos=Pedido::where('status','!=',3)->get();
+        return view('Pedidos.index',['pedidos'=>$pedidos,'selected'=>$id]);
+    }
+
+    public function finalizadoSelected($id)
+    {
         $pedidos=$pedidos=Pedido::where('status',3)->get();
         return view('Pedidos.index',['pedidos'=>$pedidos,'selected'=>$id]);
     }
