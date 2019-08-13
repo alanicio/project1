@@ -31,24 +31,57 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $pedidos=Pedido::where('status','!=',3)->get();
+    {   
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
+        $pedidos=Pedido::where('status','!=',3)->get();
         return view('Pedidos.index',['pedidos'=>$pedidos]);   
     }
 
     public function finalizadosIndex()
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedidos=Pedido::where('status',3)->get();
         return view('Pedidos.index',['pedidos'=>$pedidos]);  
     }
 
     public function pedidoSelected($id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedidos=Pedido::where('status','!=',3)->get();
         return view('Pedidos.index',['pedidos'=>$pedidos,'selected'=>$id]);
     }
 
     public function finalizadoSelected($id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedidos=$pedidos=Pedido::where('status',3)->get();
         return view('Pedidos.index',['pedidos'=>$pedidos,'selected'=>$id]);
     }
@@ -59,6 +92,14 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         return view('Pedidos.create',['empleados'=>User::get(),'proveedores'=>Proveedor::get()]);
     }
 
@@ -70,6 +111,14 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         Pedido::create($request->all());
         return $this->index();
     }
@@ -93,6 +142,14 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedido=Pedido::find($id);
         return view('Pedidos.edit',['pedido'=>$pedido]);
     }
@@ -106,6 +163,14 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         //dd($request);
         $pedido=Pedido::find($id);
         $pedido->status=$request->status;
@@ -133,6 +198,14 @@ class PedidoController extends Controller
 
     public function statusUpdate(Request $request,$id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedido=Pedido::find($id);
         $pedido->status=$request->status;
         $pedido->update();
@@ -141,6 +214,14 @@ class PedidoController extends Controller
 
     public function guiaStore(Request $request,$id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedido=Pedido::find($id);
         $pedido->guia=$request->guia;
         $pedido->update();
@@ -149,12 +230,28 @@ class PedidoController extends Controller
 
     public function archivoCreate($id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $archivos=Pedido::find($id)->archivos->all();
         return view('Pedidos.archivos',['pedido'=>Pedido::find($id),'archivos'=>$archivos]);
     }
 
     public function archivoStore(Request $request,$id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $request->file->storeAs('pedidos_files',$request->file->getClientOriginalName());
         $archivo=new Archivo($request->all());
         $archivo->nombre=$request->file->getClientOriginalName();
@@ -165,6 +262,14 @@ class PedidoController extends Controller
 
     public function dataStore(Request $request, $id)
     {
+        if(Auth::check())
+        {
+
+        }
+        else
+        {
+            return redirect('/');
+        }
         $pedido=Pedido::find($id);
         $pedido->comentarios_publicos=$request->publicos;
         $pedido->comentarios_privados=$request->privados;
