@@ -54,7 +54,7 @@ class PedidoController extends Controller
         {
             return redirect('/');
         }
-        $pedidos=Pedido::where('status',3)->get();
+        $pedidos=Pedido::where('status',3)->orderBy('id', 'DESC')->get();
         return view('Pedidos.index',['pedidos'=>$pedidos]);  
     }
 
@@ -192,7 +192,7 @@ class PedidoController extends Controller
     public function clientePedido(Request $request)
     {
         //dd($request->all());
-        $pedidos=Pedido::where('correo_cliente',$request->correo_cliente)->get();
+        $pedidos=Pedido::where('correo_cliente',$request->correo_cliente)->orderBy('id', 'DESC')->get();
         return view('Pedidos.cliente',['pedidos'=>$pedidos]);
     }
 
